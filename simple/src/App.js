@@ -1,21 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Client } from 'boardgame.io/react';
+import { Game } from 'boardgame.io/core';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import TicTacToeBoard from './Board';
+
+function IsVictory(cells) {
+  // check the victory condition
 }
+
+const TicTacToe = Game({
+  setup: () => ({ cells: Array(9).fill(null) }),
+  moves: {
+    clickCell(G, ctx, id) {
+      const cells = [...G.cells];
+
+      // only allow clicking on empty cells
+      if (cells[id] === null) {
+        cells[id] = ctx.currentPlayer;
+      }
+      
+      return { ...G, cells };
+    },
+  },
+  flow: {
+    endGameIf: (G, ctx) => {
+      if (IsVictory(G.cells)) {
+        return ctx.currentPlayer;
+      }
+    }
+  }
+});
+
+const App = Client({ 
+  game: TicTacToe,
+  board: TicTacToeBoard
+});
 
 export default App;
