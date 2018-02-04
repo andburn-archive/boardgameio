@@ -1,0 +1,41 @@
+.Board {
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+    margin-top: 60px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: rgb(252, 221, 182);
+}
+
+.Top, .Bottom {
+    width: 960px;
+    height: 370px;
+    margin: 10px;
+    background-color: beige;
+    padding: 10px;
+}
+
+.Top {
+    margin-bottom: 0;
+    border-bottom: 2px solid rgb(252, 221, 182);
+}
+
+.Bottom {
+    margin-top: 0;
+    border-top: 2px solid rgb(252, 221, 182);
+}
+
+.Hand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Top .Hand {
+    margin-bottom: 20px;
+}
+
+.Bottom .Hand {
+    margin-top: 20px;
+}
