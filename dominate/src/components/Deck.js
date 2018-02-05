@@ -2,9 +2,14 @@ import React from 'react';
 
 import style from './Deck.module.css';
 
-const deck = () => {
+const deck = (props) => {
+    const classNames = [style.Deck];
+    if (props.isEmpty) {
+        classNames.push(style.Empty);
+    }
+
     return (
-        <div className={style.Deck}>
+        <div className={classNames.join(' ')} onClick={props.click}>
             <div>DECK</div>
         </div>
     );

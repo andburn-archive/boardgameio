@@ -4,12 +4,15 @@ import Card from './Card';
 
 import style from './Hand.module.css';
 
-const hand = () => {
+const hand = (props) => {
+    const cards = [];
+    props.cards.forEach(x => {
+        cards.push(<Card key={x} />) // need a better key
+    });
+
     return (
         <div className={style.Hand}>
-            <Card />
-            <Card />
-            <Card />
+            {cards}
         </div>
     );
 }

@@ -12,16 +12,18 @@ class Board extends Component {
         <div className={style.Board}>
             <div className={style.Top}>                
                 <div className={style.Hand}>
-                    <Hand />
-                    <Deck />               
+                    <Hand cards={this.props.G.hands[0]} />
+                    <Deck click={() => this.props.moves.drawCard(0)} 
+                        isEmpty={this.props.G.decks[0].length <= 0} />               
                 </div>
                 <Field />
             </div>
             <div className={style.Bottom}>                
                 <Field />
                 <div className={style.Hand}>
-                    <Hand />
-                    <Deck />               
+                    <Hand cards={this.props.G.hands[1]} />
+                    <Deck click={() => this.props.moves.drawCard(1)} 
+                        isEmpty={this.props.G.decks[1].length <= 0} />
                 </div>
             </div>            
         </div>
