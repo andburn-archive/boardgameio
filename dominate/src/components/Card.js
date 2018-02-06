@@ -1,10 +1,20 @@
 import React from 'react';
 
+import Cards from '../data';
+
 import style from './Card.module.css';
 
-const card = () => {
+const card = (props) => {
+    let card = { id: 0, name: '?' }
+    const cardData = Cards.get(props.cardId);  
+    if (cardData !== undefined) {
+        card = cardData;
+    }
     return (
-        <div className={style.Card}></div>
+        <div className={style.Card}>
+            <p>{card.id}</p>
+            <p>{card.name}</p>
+        </div>
     );
 }
 

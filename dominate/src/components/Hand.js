@@ -6,8 +6,8 @@ import style from './Hand.module.css';
 
 const hand = (props) => {
     const cards = [];
-    props.cards.forEach(x => {
-        cards.push(<Card key={x} />) // need a better key
+    props.cards.forEach((x, i) => {
+        cards.push(<Card key={`${i}${x}`} cardId={x} />)
     });
 
     return (

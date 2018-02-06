@@ -1,4 +1,4 @@
-div.Card {
+.Card {
     width: 100px;
     height: 150px;    
     background-color: rgb(71, 194, 167);
@@ -6,8 +6,10 @@ div.Card {
     border-radius: 4px;
     cursor: pointer;
     margin:2px;
+    color: rgb(88, 105, 9);
+    text-align: center;
 }
 
-div.Card:hover {
+.Card:hover {
     box-shadow: 0px 0px 2px 2px rgb(153, 138, 138);
 }

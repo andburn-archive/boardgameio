@@ -7,10 +7,6 @@ import style from './Field.module.css';
 const field = () => {
     return (
         <div className={style.Field}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
         </div>
     );
 }
