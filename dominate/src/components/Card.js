@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Cards from '../data';
+import Cards from '../cards';
 
 import style from './Card.module.css';
 
