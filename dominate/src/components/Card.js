@@ -6,12 +6,12 @@ import style from './Card.module.css';
 
 const card = (props) => {
     let card = { id: 0, name: '?' }
-    const cardData = Cards.get(props.cardId);  
+    const cardData = Cards.get(props.cardId);
     if (cardData !== undefined) {
         card = cardData;
     }
     return (
-        <div className={style.Card}>
+        <div className={style.Card} onClick={props.click}>
             <p>{card.id}</p>
             <p>{card.name}</p>
         </div>

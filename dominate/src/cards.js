@@ -16,8 +16,8 @@ const cards = [
     { 
         id: 2,
         type: "spell",
-        name: "Three Damage",
-        action: { "damage": 3 }        
+        name: "Draw 3",
+        action: { "draw": 3 }        
     },
     { 
         id: 3,
